@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
 typedef struct{
 	char mes[10];
@@ -19,7 +19,11 @@ int main()
 {
   generacion_2122 generacion[18][24];
   int nLineas, i=0, j, k,l;
-  char x, strFechas[24][10], titulo[80];
+  char x, titulo[80];
+  
+  setlocale(LC_CTYPE,"spanish");
+  setlocale(LC_NUMERIC, "spanish");
+  
   FILE *pf;
   pf = fopen("C:/Users/hecto/Downloads/ProyectoInforREE.csv", "r");
   
@@ -29,58 +33,87 @@ int main()
   	return 1;
   }
   
-  	while (fscanf(pf, "%c", &x) != EOF)
-	{
-		if (x == '\n') 
-	       ++nLineas;
-	    if (nLineas==4)
-	      break;
-	}
+  while (fscanf(pf, "%c", &x) != EOF)
+  {
+	if (x == '\n') 
+	    ++nLineas;
+	if (nLineas==4)
+	    break;
+  }
 //	printf("El documento tiene %i lineas", nLineas);
 		
-	while (i<6)
-	{
-		fscanf(pf, "%c", &x);
-		i++;
-	}
-	i=0;
-	while (i<24)
-	{
-		
-		fscanf(pf, "%[^-]-%[^;];", generacion[0][i].fecha.mes, strFechas[i]);
-		i++;
-	}
+  while (i<6)
+  {
+	fscanf(pf, "%c", &x);
+	i++;
+  }
+  i=0;
+  while (i<24)
+  {	
+	fscanf(pf, "%[^-]-%i;", generacion[0][i].fecha.mes, &generacion[0][i].fecha.anyo);
+	i++;
+  }
 
-	for(i=0; strFechas[23][i] != '\n'; i++);
-	
-	strFechas[23][i]='\0';
-	
-//	for(i=0; i<24; i++)
-//	{
-//		printf("Fecha %i: %s %s ", i+1, generacion[0][i].fecha.mes, strFechas[i]);
-//	}
-	for(i=0; i<24; i++)
+  for(i=0; i<24; i++)
+  {
+	for(j=0; j<18; j++)
 	{
-		for(j=0; j<18; j++)
-		{
-			strcpy(generacion[j][i].fecha.mes, generacion[0][i].fecha.mes);
-		}
+		strcpy(generacion[j][i].fecha.mes, generacion[0][i].fecha.mes); //Podemos crear nosotros una funcion que haga lo mismo sin tener que usar la libreria string.h
 	}
+  }
 	
-	for(i=0; i<24; i++)
+  for(i=0; i<24; i++)
+  {
+	for(j=0; j<18; j++)
 	{
-		for(j=0; j<18; j++)
-		{
-			generacion[j][i].fecha.anyo = atoi(strFechas[i]);
-		}
+		generacion[j][i].fecha.anyo = generacion[0][i].fecha.anyo;
 	}
+  }
 	
-	for(i=0; i<24; i++)
+//  for(i=0; i<24; i++)
+//  {
+//	printf("Fecha %i: %s %i ", i+1, generacion[4][i].fecha.mes, generacion[4][i].fecha.anyo);
+//  }
+//	
+
+  fscanf(pf, "%c", &x);
+  printf("%c", x);
+
+  i=0;
+  
+  while (i<18)
+  {
+	fscanf(pf, "%[^;]", generacion[i][0].tipo);
+//	printf("%s\n", generacion[i][0].tipo);
+	for(j=0; j<24; j++)
 	{
-		printf("Fecha %i: %s %i ", i+1, generacion[4][i].fecha.mes, generacion[4][i].fecha.anyo);
+		fscanf(pf, ";%f", &generacion[i][j].magnitud);
+//		printf("%f  ", generacion[i][j].magnitud);
+	}	
+//	printf("\n");
+	fscanf(pf, "%c", &x);
+	i++;
+  }
+  for(i=0; i<18; i++)
+  {
+	for(j=0; j<24; j++)
+	{
+		strcpy(generacion[i][j].tipo, generacion[i][0].tipo); //Podemos crear nosotros una funcion que haga lo mismo sin tener que usar la libreria string.h
 	}
+  }
+  
+//  printf("Tipo %s %f ", generacion[0][0].tipo, generacion[0][0].magnitud);
+  for(i=0; i<18; i++)
+  {
+	printf("Tipo %s: ", generacion[i][0].tipo);
+	for(j=0; j<24; j++)
+	{
+		printf("%f ", generacion[i][j].magnitud);
+	}
+  printf("\n");
+  }
 	
-	fclose(pf);
+  fclose(pf);
   
   
   return 0;
