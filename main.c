@@ -25,7 +25,7 @@ int main()
   setlocale(LC_NUMERIC, "spanish");
   
   FILE *pf;
-  pf = fopen("C:/Users/hecto/Downloads/ProyectoInforREE.csv", "r");
+  pf = fopen("ProyectoInforREE.csv", "r");
   
   if (pf == NULL)
   {
