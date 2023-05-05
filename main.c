@@ -21,6 +21,7 @@ int main()
   int nLineas, i=0, j, k,l;
   char x, titulo[80];
   
+  
   setlocale(LC_CTYPE,"spanish");
   setlocale(LC_NUMERIC, "spanish");
   
