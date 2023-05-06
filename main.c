@@ -2,6 +2,8 @@
 #include <string.h>
 #include <locale.h>
 
+//ESTRUCTURAS
+
 typedef struct{
 	char mes[10];
 	int anyo; 
@@ -13,7 +15,8 @@ typedef struct{
 	date fecha; 
 }generacion_2122;
 
-
+//FUNCIONES
+int operaciones();
 
 int main()
 {
@@ -116,7 +119,7 @@ int main()
 	
   fclose(pf);
   
-  int op, letra, ano;
+  int op, operacion, num, ano, mes, mes2;
   do{
   system("cls");
   printf("ESTE PROGRAMA TIENE LA FUNCIÓN DE REALIZAR UN AMPLIO ESTUDIO ESTÁDISTICO CON RESPECTO \nA LOS VALORES RECOGIDOS POR LA RED ELÉCTRICA ESPAÑOLA ENTRE EL AÑO 2021 Y 2022. \n");
@@ -150,43 +153,60 @@ int main()
   		printf("16. Residuos no renovables\n");
   		printf("17. Residuos renovavles\n");
   		printf("18. VOLVER ATRÁS\n");
-  		scanf("%d", &letra);
+  		scanf("%d", &num);
   		
-  		switch(letra)
+  		switch(num)
 		  	{
   			case 1:
+  				operacion = operaciones();
   				break;
   			case 2:
+  				operacion = operaciones();
   				break;
   			case 3:
+  				operacion = operaciones();
   				break;
   			case 4:
+  				operacion = operaciones();
   				break;
   			case 5:
+  				operacion = operaciones();
   				break;
   			case 6:
+  				operacion = operaciones();
   				break;
   			case 7:
+  				operacion = operaciones();
   				break;
   			case 8:
+  				operacion = operaciones();
   				break;
   			case 9:
+  				operacion = operaciones();
   				break;
   			case 10:
+  				operacion = operaciones();
   				break;
   			case 11:
+  				operacion = operaciones();
   				break;
   			case 12:
+  				operacion = operaciones();
   				break;
   			case 13:
+  				operacion = operaciones();
   				break;
   			case 14:
+  				operacion = operaciones();
   				break;
   			case 15:
+  				operacion = operaciones();
   				break;
   			case 16:
+  				operacion = operaciones();
   				break;
   			case 17:
+  				operacion = operaciones();
   				break;
   			case 18:
   				break;
@@ -195,7 +215,7 @@ int main()
             	printf("Opción no válida. Por favor seleccione una opción válida.\n");
             	break;
   			}
-	}while(letra!=18);
+	}while(num!=18);
   		
   	break;
   
@@ -225,35 +245,51 @@ int main()
 				printf("10. Octubre\n");
 				printf("11. Noviembre\n");
 				printf("12. Diciembre\n");
-				int mes;
 				scanf("%d", &mes);
 				
 				switch(mes){
 		  			case 1:
+		  				operacion = operaciones();
 		  				break;
 		  			case 2:
+		  				operacion = operaciones();
 		  				break;
 		  			case 3:
+		  				operacion = operaciones();
 		  				break;
 		  			case 4:
+		  				operacion = operaciones();
 		  				break;
 		  			case 5:
+		  				operacion = operaciones();
 		  				break;
 		  			case 6:
+		  				operacion = operaciones();
 		  				break;
 		  			case 7:
+		  				operacion = operaciones();
 		  				break;
 		  			case 8:
+		  				operacion = operaciones();
 		  				break;
 		  			case 9:
+		  				operacion = operaciones();
 		  				break;
 		  			case 10:
+		  				operacion = operaciones();
 		  				break;
 		  			case 11:
+		  				operacion = operaciones();
 		  				break;
 		  			case 12:
+		  				operacion = operaciones();
+		  				break;
+		  			case 13:
+		  				break;
+		  			default:
 		  				break;
 					}
+					
 			break;
   			
 			case 2:
@@ -270,35 +306,50 @@ int main()
 				printf("10. Octubre\n");
 				printf("11. Noviembre\n");
 				printf("12. Diciembre\n");
-				int mes2;
 				scanf("%d", &mes2);
 				
 				switch(mes2){
 		  			case 1:
+		  				operacion = operaciones();
 		  				break;
 		  			case 2:
+		  				operacion = operaciones();
 		  				break;
 		  			case 3:
+		  				operacion = operaciones();
 		  				break;
 		  			case 4:
+		  				operacion = operaciones();
 		  				break;
 		  			case 5:
+		  				operacion = operaciones();
 		  				break;
 		  			case 6:
+		  				operacion = operaciones();
 		  				break;
 		  			case 7:
+		  				operacion = operaciones();
 		  				break;
 		  			case 8:
+		  				operacion = operaciones();
 		  				break;
 		  			case 9:
+		  				operacion = operaciones();
 		  				break;
 		  			case 10:
+		  				operacion = operaciones();
 		  				break;
 		  			case 11:
+		  				operacion = operaciones();
 		  				break;
 		  			case 12:
+		  				operacion = operaciones();
 		  				break;
-					}	
+		  			case 13:
+		  				break;
+		  			default:
+		  				break;
+					}
 			case 3:
 				break;
 			default:
@@ -318,6 +369,69 @@ int main()
 	}while(op!=3);
 
   return 0;
+}
+
+//FUNCION PARA ELEGIR ESTUDIO ESTADISTICO
+int operaciones()
+{
+	int op2;
+	system("cls");
+  do{
+	printf("¿Qué tipo de estudio estadístico desea hacer? \n");
+	printf("1. Media\n");
+	printf("2. Moda\n");
+	printf("3. Hallar maximo\n");
+	printf("4. Hallar minimo\n");
+	printf("5. Sumatorio\n");
+	printf("6. Mediana\n");
+	printf("7. Varianza\n");
+	printf("8. Desviación típica\n");
+	printf("9. Ordenar de mayor a menor\n");
+	printf("10. Ordenar de menor a mayor\n");
+	printf("11. VOLVER ATRÁS\n");
+	scanf("%i", &op2);
+	
+	switch(op2)
+	{
+		case 1:
+			return(1);
+			break;
+		case 2:
+			return(2);
+			break;
+		case 3:
+			return(3);
+			break;
+		case 4:
+			return(4);
+			break;
+		case 5:
+			return(5);
+			break;
+		case 6:
+			return(6);
+			break;
+		case 7:
+			return(7);
+			break;
+		case 8:
+			return(8);
+			break;
+		case 9:
+			return(9);
+			break;
+		case 10:
+			return(10);
+			break;
+		case 11:
+			system("cls");
+			break;
+		default:
+			system("cls");
+			printf("Opción no válida. Por favor seleccione una opción válida.\n");
+			break;
+	}	
+  }while (op2!=11);
 }
 
 
