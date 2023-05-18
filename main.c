@@ -3,28 +3,20 @@
 #include <locale.h>
 #include "LibreriaBubalongas.h"
 
-//ESTRUCTURAS
+#define NUM_FILAS 18
+#define NUM_COLUMNAS 24
 
-typedef struct{
-	char mes[10];
-	int anyo; 
-}date;
 
-typedef struct{
-	char tipo[50];
-	float magnitud;
-	date fecha; 
-}generacion_2122;
 
 //FUNCIONES
 int operaciones();
 
 int main()
 {
-  generacion_2122 generacion[18][24];
+  generacion_2122 generacion[NUM_FILAS][NUM_COLUMNAS];
   int nLineas, i=0, j, k,l;
   char x, titulo[80];
-  
+  int op, operacion, num, ano, mes, mes2;
   
   setlocale(LC_CTYPE,"spanish");
   setlocale(LC_NUMERIC, "spanish");
@@ -119,10 +111,13 @@ int main()
   }*/
 	
   fclose(pf);
+  int filas=0, columnas=24;
+  i=0;
   
-  int op, operacion, num, ano, mes, mes2;
+  printf("El maximo en hidraulica es %f\n", maxtipo(generacion, filas, columnas));
+  
   do{
-  system("cls");
+//  system("cls");
   printf("ESTE PROGRAMA TIENE LA FUNCIÓN DE REALIZAR UN AMPLIO ESTUDIO ESTÁDISTICO CON RESPECTO \nA LOS VALORES RECOGIDOS POR LA RED ELÉCTRICA ESPAÑOLA ENTRE EL AÑO 2021 Y 2022. \n");
   printf("Para comenzar con el estudio, por favor escoja entre las siguientes opciones:\n");
   printf("1. Tipo de generación eléctrica.\n");
@@ -368,7 +363,9 @@ int main()
 	}
 	
 	}while(op!=3);
-
+	
+	printf("Fin del programa.\n");
+	
   return 0;
 }
 
