@@ -4,7 +4,10 @@
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+Héctor Gordo Hernando **HectorGordo**
+Miguel Parra Bezón **MiguelParraBezon** 
+Marco Rosales      **Marco-Rosales**
+Iván Duque  
 
 ## Objetivos del trabajo
 
