@@ -99,22 +99,22 @@ int main()
 	}
   }
   
-/*printf("Tipo %s %f ", generacion[0][0].tipo, generacion[0][0].magnitud);
-  for(i=0; i<18; i++)
-  {
-	printf("Tipo %s: ", generacion[i][0].tipo);
-	for(j=0; j<24; j++)
-	{
-		printf("%f ", generacion[i][j].magnitud);
-	}
-  printf("\n");
-  }*/
+//  printf("Tipo %s %f ", generacion[0][0].tipo, generacion[0][0].magnitud);
+
+  printf("Tipo %s %i \n", generacion[0][0].fecha.mes, generacion[0][0].fecha.anyo);
+
+//  for(i=0; i<18; i++)
+//  {
+//	printf("Tipo %s: ", generacion[i][0].tipo);
+//	for(j=0; j<24; j++)
+//	{
+//		printf("%f ", generacion[i][j].magnitud);
+//	}
+//  printf("\n");
+//  }
 	
   fclose(pf);
-  int filas=0, columnas=24;
-  i=0;
   
-  printf("El maximo en hidraulica es %f\n", maxtipo(generacion, filas, columnas));
   
   do{
 //  system("cls");
@@ -154,55 +154,55 @@ int main()
   		switch(num)
 		  	{
   			case 1:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 0);
   				break;
   			case 2:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 1);
   				break;
   			case 3:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 2);
   				break;
   			case 4:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 3);
   				break;
   			case 5:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 4);
   				break;
   			case 6:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 5);
   				break;
   			case 7:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 6);
   				break;
   			case 8:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 7);
   				break;
   			case 9:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 8);
   				break;
   			case 10:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 9);
   				break;
   			case 11:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 10);
   				break;
   			case 12:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 11);
   				break;
   			case 13:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 12);
   				break;
   			case 14:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 13);
   				break;
   			case 15:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 14);
   				break;
   			case 16:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 15);
   				break;
   			case 17:
-  				operacion = operaciones();
+  				operacion = operaciones(generacion, 16);
   				break;
   			case 18:
   				break;
@@ -370,9 +370,10 @@ int main()
 }
 
 //FUNCION PARA ELEGIR ESTUDIO ESTADISTICO
-int operaciones()
+int operaciones(generacion_2122 generacion[][NUM_COLUMNAS], int tipo)
 {
 	int op2;
+	int columnas;
 	system("cls");
   do{
 	printf("¿Qué tipo de estudio estadístico desea hacer? \n");
@@ -398,6 +399,8 @@ int operaciones()
 			return(2);
 			break;
 		case 3:
+			columnas=24;
+			maxtipo(generacion, tipo, columnas);
 			return(3);
 			break;
 		case 4:

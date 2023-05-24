@@ -18,24 +18,25 @@ typedef struct{
 
 float maxtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)
 { 
-  int i, anyo;
-  float max;
+  int i, ano=0;
+  float max=0;
   char mes[10];
   
-  max=matriz[filas][columnas].magnitud;
+  max=matriz[filas][0].magnitud;
+  ano=matriz[filas][0].fecha.anyo;
+  strcpy(mes, matriz[filas][0].fecha.mes);
   
   for(i=1; i<columnas; i++)
   {
   	if(matriz[filas][i].magnitud>max)
   	{
   		max=matriz[filas][i].magnitud;
-  		anyo=matriz[filas][i].fecha.anyo;
+  		ano=matriz[filas][i].fecha.anyo;
   		strcpy(mes, matriz[filas][i].fecha.mes);
     }
-  	  
   }
   
-  printf("El maximo en hidraulica es %f y se dio en %s del %i\n", max, mes, anyo);
+  printf("\nEl maximo en %s es %f y se dio en %s del %i\n\n", matriz[filas][0].tipo, max, mes, ano);
   
   return max;
 }
