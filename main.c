@@ -74,7 +74,7 @@ int main()
 //	
 
   fscanf(pf, "%c", &x);
-  printf("%c", x);
+//  printf("%c", x);
 
   i=0;
   
@@ -101,7 +101,7 @@ int main()
   
 //  printf("Tipo %s %f ", generacion[0][0].tipo, generacion[0][0].magnitud);
 
-  printf("Tipo %s %i \n", generacion[0][0].fecha.mes, generacion[0][0].fecha.anyo);
+//  printf("Tipo %s %i \n", generacion[0][0].fecha.mes, generacion[0][0].fecha.anyo);
 
 //  for(i=0; i<18; i++)
 //  {
@@ -144,7 +144,7 @@ int main()
   		printf("11. Eólica\n");
   		printf("12. Solar fotovoltaica\n");
   		printf("13. Solar térmica\n");
-  		printf("14. Otras reonvavbles\n");
+  		printf("14. Otras reonvables\n");
   		printf("15. Cogeneración\n");
   		printf("16. Residuos no renovables\n");
   		printf("17. Residuos renovavles\n");

@@ -22,7 +22,7 @@ float mediatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)
     int i;
     float media = 0, suma = 0;
     
-    for(i = 1; i < columnas; i++)
+    for(i = 0; i < columnas; i++)
     {
     	suma += matriz[filas][i].magnitud;
 	}
@@ -31,7 +31,7 @@ float mediatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)
 	
 	printf("\nLa media en %s es %f\n\n", matriz[filas][0].tipo, media);
 	
-	return media, suma;
+	return media;
 }
 
 float modatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)
@@ -116,7 +116,7 @@ float sumtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)
     int i;
     float sum = 0;
     
-    for(i = 1; i < columnas; i++)
+    for(i = 0; i < columnas; i++)
     {
     	sum += matriz[filas][i].magnitud;
 	}
@@ -143,14 +143,14 @@ float varianzatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int column
 	int i;
     float media = 0, suma = 0, varianza = 0, varianza_numerador = 0;
     
-    for(i = 1; i < columnas; i++)
+    for(i = 0; i < columnas; i++)
     {
     	suma += matriz[filas][i].magnitud;
 	}
 	
 	media = suma / columnas;
 	
-	for(i = 1; i < columnas; i++)
+	for(i = 0; i < columnas; i++)
     {
     	varianza_numerador += pow(matriz[filas][i].magnitud - media, 2);
 	}
@@ -159,7 +159,7 @@ float varianzatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int column
 	
 	printf("\nLa varianza en %s es %f\n\n", matriz[filas][0].tipo, varianza);
 	
-	return varianza, media, suma, varianza_numerador;
+	return varianza;
 }
 
 float destipicatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas) 
@@ -167,14 +167,14 @@ float destipicatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int colum
 	int i;
     float media = 0, suma = 0, varianza = 0, varianza_numerador = 0, desviaciontipica = 0;
     
-    for(i = 1; i < columnas; i++)
+    for(i = 0; i < columnas; i++)
     {
     	suma += matriz[filas][i].magnitud;
 	}
 	
 	media = suma / columnas;
 	
-	for(i = 1; i < columnas; i++)
+	for(i = 0; i < columnas; i++)
     {
     	varianza_numerador += pow(matriz[filas][i].magnitud - media, 2);
 	}
@@ -185,7 +185,7 @@ float destipicatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int colum
 	
 	printf("\nLa desviacion tipica en %s es %f\n\n", matriz[filas][0].tipo, desviaciontipica);
 	
-	return varianza, media, suma, varianza_numerador, desviaciontipica;
+	return desviaciontipica;
 }
 
 
