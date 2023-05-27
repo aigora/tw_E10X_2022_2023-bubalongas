@@ -393,9 +393,13 @@ int operaciones(generacion_2122 generacion[][NUM_COLUMNAS], int tipo)
 	switch(op2)
 	{
 		case 1:
+			columnas=24;
+			mediatipo(generacion, tipo, columnas);
 			return(1);
 			break;
 		case 2:
+			columnas=24;
+			modatipo(generacion, tipo, columnas);
 			return(2);
 			break;
 		case 3:
@@ -404,18 +408,28 @@ int operaciones(generacion_2122 generacion[][NUM_COLUMNAS], int tipo)
 			return(3);
 			break;
 		case 4:
+			columnas=24;
+			mintipo(generacion, tipo, columnas);
 			return(4);
 			break;
 		case 5:
+			columnas=24;
+			sumtipo(generacion, tipo, columnas);
 			return(5);
 			break;
 		case 6:
+			columnas=24;
+			medianatipo(generacion, tipo, columnas);
 			return(6);
 			break;
 		case 7:
+			columnas=24;
+			varianzatipo(generacion, tipo, columnas);
 			return(7);
 			break;
 		case 8:
+			columnas=24;
+			destipicatipo(generacion, tipo, columnas);
 			return(8);
 			break;
 		case 9:
