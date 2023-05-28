@@ -1,1 +1,4 @@
 Esta es la transcripción del programa:
+La media en ene-21 es 1429,733643
+
+Fin del programa.
