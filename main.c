@@ -384,7 +384,7 @@ int main()
 }
 
 //FUNCION PARA ELEGIR ESTUDIO ESTADISTICO
-int operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo)
+int operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo, FILE *ptranscrip)
 {
 	int op2;
 	int columnas;
@@ -408,42 +408,42 @@ int operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo)
 	{
 		case 1:
 			columnas=24;
-			mediatipo(generacion, tipo, columnas);
+			mediatipo(generacion, tipo, columnas, ptranscrip);
 			return(1);
 			break;
 		case 2:
 			columnas=24;
-			modatipo(generacion, tipo, columnas);
+			modatipo(generacion, tipo, columnas);//Esta mal
 			return(2);
 			break;
 		case 3:
 			columnas=24;
-			maxtipo(generacion, tipo, columnas);
+			maxtipo(generacion, tipo, columnas, ptranscrip);
 			return(3);
 			break;
 		case 4:
 			columnas=24;
-			mintipo(generacion, tipo, columnas);
+			mintipo(generacion, tipo, columnas, ptranscrip);
 			return(4);
 			break;
 		case 5:
 			columnas=24;
-			sumtipo(generacion, tipo, columnas);
+			sumtipo(generacion, tipo, columnas, ptranscrip);
 			return(5);
 			break;
 		case 6:
 			columnas=24;
-			medianatipo(generacion, tipo, columnas);
+			medianatipo(generacion, tipo, columnas, ptranscrip);
 			return(6);
 			break;
 		case 7:
 			columnas=24;
-			varianzatipo(generacion, tipo, columnas);
+			varianzatipo(generacion, tipo, columnas, ptranscrip);
 			return(7);
 			break;
 		case 8:
 			columnas=24;
-			destipicatipo(generacion, tipo, columnas);
+			destipicatipo(generacion, tipo, columnas, ptranscrip);
 			return(8);
 			break;
 		case 9:

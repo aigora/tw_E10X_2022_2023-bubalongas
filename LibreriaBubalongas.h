@@ -17,7 +17,7 @@ typedef struct{
 	date fecha; 
 }generacion_2122;
 
-float mediatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas) 
+float mediatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
     int i;
     float media = 0, suma = 0;
@@ -30,6 +30,12 @@ float mediatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)
 	media = suma / columnas;
 	
 	printf("\nLa media en %s es %f\n\n", matriz[filas][0].tipo, media);
+	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip, "La media en %s es %f\n", matriz[filas][0].tipo, media);
+    
+	fclose(ptranscrip);
 	
 	return media;
 }
@@ -59,7 +65,7 @@ float modatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)/
   return moda;
 }
   
-float maxtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)
+float maxtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
 { 
   int i, ano=0;
   float max=0;
@@ -81,11 +87,17 @@ float maxtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)
   
   printf("\nEl maximo en %s es %f y se dio en %s del %i\n\n", matriz[filas][0].tipo, max, mes, ano);
   
+  ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+  fprintf(ptranscrip, "El maximo en %s es %f y se dio en %s del %i\n", matriz[filas][0].tipo, max, mes, ano);
+    
+  fclose(ptranscrip);
+  
   return max;
 }
 
 
-float mintipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas) 
+float mintipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
     int i, ano = 0;
     float min = 0;
@@ -107,11 +119,16 @@ float mintipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)
   
     printf("\nEl valor minimo en %s es %f y se dio en %s del %i\n\n", matriz[filas][0].tipo, min, mes, ano);
     
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip, "El valor minimo en %s es %f y se dio en %s del %i\n", matriz[filas][0].tipo, min, mes, ano);
+    
+	fclose(ptranscrip);
 
     return min;
 }
 
-float sumtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas) 
+float sumtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
     int i;
     float sum = 0;
@@ -123,10 +140,16 @@ float sumtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)
 	
 	printf("\nEl sumatorio de %s es %f\n\n", matriz[filas][0].tipo, sum);
 	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip, "El sumatorio de %s es %f\n", matriz[filas][0].tipo, sum);
+    
+	fclose(ptranscrip);
+	
 	return sum;
 }
 
-float medianatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas) 
+float medianatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
 	int i;
 	float mediana = 0;
@@ -135,10 +158,16 @@ float medianatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columna
 	
 	printf("\nLa mediana en %s es %f\n\n", matriz[filas][0].tipo, mediana);
 	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip, "La mediana en %s es %f\n", matriz[filas][0].tipo, mediana);
+    
+	fclose(ptranscrip);	
+	
 	return mediana;
 }
 
-float varianzatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas) 
+float varianzatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
 	int i;
     float media = 0, suma = 0, varianza = 0, varianza_numerador = 0;
@@ -159,10 +188,16 @@ float varianzatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int column
 	
 	printf("\nLa varianza en %s es %f\n\n", matriz[filas][0].tipo, varianza);
 	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip, "La varianza en %s es %f\n", matriz[filas][0].tipo, varianza);
+    
+	fclose(ptranscrip);	
+	
 	return varianza;
 }
 
-float destipicatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas) 
+float destipicatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
 	int i;
     float media = 0, suma = 0, varianza = 0, varianza_numerador = 0, desviaciontipica = 0;
@@ -184,6 +219,12 @@ float destipicatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int colum
 	desviaciontipica = sqrt(varianza);
 	
 	printf("\nLa desviacion tipica en %s es %f\n\n", matriz[filas][0].tipo, desviaciontipica);
+	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip, "La desviacion tipica en %s es %f\n", matriz[filas][0].tipo, desviaciontipica);
+    
+	fclose(ptranscrip);	
 	
 	return desviaciontipica;
 }
