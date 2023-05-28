@@ -9,15 +9,15 @@
 
 
 //FUNCIONES
-int operacionesfilas();
-int operacionescolumnas();
+void operacionesfilas();
+void operacionescolumnas();
 
 int main()
 {
   generacion_2122 generacion[NUM_FILAS][NUM_COLUMNAS];
   int nLineas, i=0, j, k,l;
   char x, titulo[80];
-  int op, operacion, num, ano, mes, mes2;
+  int op, num, ano, mes, mes2;
   
   setlocale(LC_CTYPE,"spanish");
   setlocale(LC_NUMERIC, "spanish");
@@ -124,7 +124,7 @@ int main()
   fclose(ptranscrip);
   
   do{
-//  system("cls");
+	system("cls");
   printf("ESTE PROGRAMA TIENE LA FUNCIÓN DE REALIZAR UN AMPLIO ESTUDIO ESTÁDISTICO CON RESPECTO \nA LOS VALORES RECOGIDOS POR LA RED ELÉCTRICA ESPAÑOLA ENTRE EL AÑO 2021 Y 2022. \n");
   printf("Para comenzar con el estudio, por favor escoja entre las siguientes opciones:\n");
   printf("1. Tipo de generación eléctrica.\n");
@@ -161,55 +161,55 @@ int main()
   		switch(num)
 		  	{
   			case 1:
-  				operacion = operacionesfilas(generacion, 0);
+  				operacionesfilas(generacion, 0);
   				break;
   			case 2:
-  				operacion = operacionesfilas(generacion, 1);
+  				operacionesfilas(generacion, 1);
   				break;
   			case 3:
-  				operacion = operacionesfilas(generacion, 2);
+  				operacionesfilas(generacion, 2);
   				break;
   			case 4:
-  				operacion = operacionesfilas(generacion, 3);
+  				operacionesfilas(generacion, 3);
   				break;
   			case 5:
-  				operacion = operacionesfilas(generacion, 4);
+  				operacionesfilas(generacion, 4);
   				break;
   			case 6:
-  				operacion = operacionesfilas(generacion, 5);
+  				operacionesfilas(generacion, 5);
   				break;
   			case 7:
-  				operacion = operacionesfilas(generacion, 6);
+  				operacionesfilas(generacion, 6);
   				break;
   			case 8:
-  				operacion = operacionesfilas(generacion, 7);
+  				operacionesfilas(generacion, 7);
   				break;
   			case 9:
-  				operacion = operacionesfilas(generacion, 8);
+  				operacionesfilas(generacion, 8);
   				break;
   			case 10:
-  				operacion = operacionesfilas(generacion, 9);
+  				operacionesfilas(generacion, 9);
   				break;
   			case 11:
-  				operacion = operacionesfilas(generacion, 10);
+  				operacionesfilas(generacion, 10);
   				break;
   			case 12:
-  				operacion = operacionesfilas(generacion, 11);
+  				operacionesfilas(generacion, 11);
   				break;
   			case 13:
-  				operacion = operacionesfilas(generacion, 12);
+  				operacionesfilas(generacion, 12);
   				break;
   			case 14:
-  				operacion = operacionesfilas(generacion, 13);
+  				operacionesfilas(generacion, 13);
   				break;
   			case 15:
-  				operacion = operacionesfilas(generacion, 14);
+  				operacionesfilas(generacion, 14);
   				break;
   			case 16:
-  				operacion = operacionesfilas(generacion, 15);
+  				operacionesfilas(generacion, 15);
   				break;
   			case 17:
-  				operacion = operacionesfilas(generacion, 16);
+  				operacionesfilas(generacion, 16);
   				break;
   			case 18:
   				break;
@@ -252,40 +252,40 @@ int main()
 				
 				switch(mes){
 		  			case 1:
-		  				operacion = operacionescolumnas(generacion, 0);
+		  				operacionescolumnas(generacion, 0);
 		  				break;
 		  			case 2:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 1);
 		  				break;
 		  			case 3:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 2);
 		  				break;
 		  			case 4:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 3);
 		  				break;
 		  			case 5:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 4);
 		  				break;
 		  			case 6:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 5);
 		  				break;
 		  			case 7:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 6);
 		  				break;
 		  			case 8:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 7);
 		  				break;
 		  			case 9:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 8);
 		  				break;
 		  			case 10:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 9);
 		  				break;
 		  			case 11:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 10);
 		  				break;
 		  			case 12:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 11);
 		  				break;
 		  			case 13:
 		  				break;
@@ -313,40 +313,40 @@ int main()
 				
 				switch(mes2){
 		  			case 1:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 12);
 		  				break;
 		  			case 2:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 13);
 		  				break;
 		  			case 3:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 14);
 		  				break;
 		  			case 4:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 15);
 		  				break;
 		  			case 5:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 16);
 		  				break;
 		  			case 6:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 17);
 		  				break;
 		  			case 7:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 18);
 		  				break;
 		  			case 8:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 19);
 		  				break;
 		  			case 9:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 20);
 		  				break;
 		  			case 10:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 21);
 		  				break;
 		  			case 11:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 22);
 		  				break;
 		  			case 12:
-		  				operacion = operacionescolumnas();
+		  				operacionescolumnas(generacion, 23);
 		  				break;
 		  			case 13:
 		  				break;
@@ -384,7 +384,11 @@ int main()
 }
 
 //FUNCION PARA ELEGIR ESTUDIO ESTADISTICO
+<<<<<<< HEAD
 int operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo, FILE *ptranscrip)
+=======
+void operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo)
+>>>>>>> ed1032fa1a231c530a21ea2e5a9434a468dda0fe
 {
 	int op2;
 	int columnas;
@@ -408,6 +412,7 @@ int operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo, FILE 
 	{
 		case 1:
 			columnas=24;
+<<<<<<< HEAD
 			mediatipo(generacion, tipo, columnas, ptranscrip);
 			return(1);
 			break;
@@ -445,12 +450,41 @@ int operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo, FILE 
 			columnas=24;
 			destipicatipo(generacion, tipo, columnas, ptranscrip);
 			return(8);
+=======
+			mediatipo(generacion, tipo, columnas);
+			break;
+		case 2:
+			columnas=24;
+			modatipo(generacion, tipo, columnas);
+			break;
+		case 3:
+			columnas=24;
+			maxtipo(generacion, tipo, columnas);
+			break;
+		case 4:
+			columnas=24;
+			mintipo(generacion, tipo, columnas);
+			break;
+		case 5:
+			columnas=24;
+			sumtipo(generacion, tipo, columnas);
+			break;
+		case 6:
+			columnas=24;
+			medianatipo(generacion, tipo, columnas);
+			break;
+		case 7:
+			columnas=24;
+			varianzatipo(generacion, tipo, columnas);
+			break;
+		case 8:
+			columnas=24;
+			destipicatipo(generacion, tipo, columnas);
+>>>>>>> ed1032fa1a231c530a21ea2e5a9434a468dda0fe
 			break;
 		case 9:
-			return(9);
 			break;
 		case 10:
-			return(10);
 			break;
 		case 11:
 			system("cls");
@@ -464,7 +498,7 @@ int operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo, FILE 
 }
 
 
-int operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, FILE *ptranscrip)
+void operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, FILE *ptranscrip)
 {
 	int op2;
 	int filas;
@@ -489,34 +523,24 @@ int operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, F
 		case 1:
 			filas=17;
 			mediacolumna(generacion, filas, fecha, ptranscrip);
-			return(1);
 			break;
 		case 2:
-			return(2);
 			break;
 		case 3:
-			return(3);
 			break;
 		case 4:
-			return(4);
 			break;
 		case 5:
-			return(5);
 			break;
 		case 6:
-			return(6);
 			break;
 		case 7:
-			return(7);
 			break;
 		case 8:
-			return(8);
 			break;
 		case 9:
-			return(9);
 			break;
 		case 10:
-			return(10);
 			break;
 		case 11:
 			system("cls");
