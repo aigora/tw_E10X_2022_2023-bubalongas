@@ -254,7 +254,7 @@ float mediacolumna(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, i
 	return media;
 }
 
-float maxcolumnas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)
+float maxcolumnas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
 { 
   int i, ano=0;
   float max=0;
