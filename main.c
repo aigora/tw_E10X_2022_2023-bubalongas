@@ -114,6 +114,7 @@ int main()
 //  printf("\n");
 //  }
 
+
 	
   fclose(pf);
   
@@ -151,10 +152,10 @@ int main()
   		printf("11. Eólica\n");
   		printf("12. Solar fotovoltaica\n");
   		printf("13. Solar térmica\n");
-  		printf("14. Otras reonvables\n");
+  		printf("14. Otras renovables\n");
   		printf("15. Cogeneración\n");
   		printf("16. Residuos no renovables\n");
-  		printf("17. Residuos renovavles\n");
+  		printf("17. Residuos renovables\n");
   		printf("18. VOLVER ATRÁS\n");
   		scanf("%d", &num);
   		
@@ -439,6 +440,8 @@ void operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo, FILE
 			columnas=24;
 			destipicatipo(generacion, tipo, columnas, ptranscrip);
 		case 9:
+			columnas=24;
+			ordenar_max_min_filas(generacion, tipo, columnas, ptranscrip);
 			break;
 		case 10:
 			break;
@@ -452,6 +455,7 @@ void operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo, FILE
 	}	
   }while (op2!=11);
 }
+
 
 
 void operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, FILE *ptranscrip)
