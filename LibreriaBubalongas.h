@@ -364,7 +364,9 @@ float mediacolumna(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, i
 	return media;
 }
 
-// 2.2 MAXIMO POR COLUMNAS
+// 2.2 MODA POR COLUMNAS
+
+// 2.3 MAXIMO POR COLUMNAS
 float maxcolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
 { 
 	int i, ano=0;
@@ -399,7 +401,7 @@ float maxcolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, in
   	return max;
 }
 
-// 2.3 MINIMO POR COLUMNAS
+// 2.4 MINIMO POR COLUMNAS
 float mincolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
 { 
 	int i, ano=0;
@@ -435,7 +437,7 @@ float mincolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, in
 }
 
 
-// 2.4 SUMATORIO POR COLUMNAS
+// 2.5 SUMATORIO POR COLUMNAS
 float sumatoriocolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
 {
 	int i;
@@ -448,11 +450,87 @@ float sumatoriocolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int fil
 	
 	printf("\nEl sumatorio de %s-%i es %f\n\n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo, sum);	
 	
-  	ptranscrip = fopen("TrancripcionProyecto.txt", "a"); //HAY QUE VER SI SE TRANSCRIBE...
+  	ptranscrip = fopen("TrancripcionProyecto.txt", "a"); 
   
   	fprintf(ptranscrip, "El sumatorio de %s-%i es %f\n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo, sum);
     
   	fclose(ptranscrip);
   	
   	return sum;
+}
+
+
+// 2.6 MEDIANA POR COLUMNAS
+float medianacolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
+{
+	int i;
+	float mediana = 0;
+	
+	mediana = (matriz[9][columnas].magnitud);
+	
+	printf("\nLa mediana en %s-%i es %f\n\n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo, mediana);
+	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip, "La mediana en %s-%i es %f\n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo, mediana);
+    
+	fclose(ptranscrip);	
+	
+	return mediana;
+}
+
+// 2.7 VARIANZA POR COLUMNAS
+// 2.8 DESVIACIÓN TÍPICA POR COLUMNAS
+
+// 2.9 ORDENAR DE MÁXIMO A MÍNIMO POR COLUMNAS
+void ordenar_max_min_columnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
+{
+
+	int i,j,k=17, ano_mayor;
+	float v[17], mayor;
+	char cadenaaux[10];
+	date fechas[24];
+	
+	for (i=0; i < k; i++)
+	{
+		v[i]=matriz[filas][i].magnitud;
+	}
+	
+	for (i=0; i < k; i++)
+	{
+		fechas[i].anyo=matriz[filas][i].fecha.anyo;
+		strcpy(fechas[i].mes, matriz[filas][i].fecha.mes);
+	}
+	
+	
+	for( j=0; j<k-1; j++)
+	{
+		for (i=0; i < k-1; i++)
+		{
+			if (v[i]< v[i+1])
+				{
+				mayor = v[i];
+				v[i] =v[i+1];
+				v[i+1]=mayor;
+				ano_mayor = fechas[i].anyo;
+				fechas[i].anyo = fechas[i+1].anyo;
+				fechas[i+1].anyo = ano_mayor;
+				strcpy(cadenaaux, fechas[i].mes);
+				strcpy(fechas[i].mes, fechas[i+1].mes);
+				strcpy(fechas[i+1].mes, cadenaaux);
+				}
+		}
+		
+   	}
+	for (i=0; i< k; i++)
+		printf ("%d) %f en %s-%i\n", i+1, v[i], fechas[i].mes, fechas[i].anyo);
+	printf("\n\n");
+	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    for (i=0; i< k; i++)
+		fprintf(ptranscrip, "%d) %f en %s-%i\n", i+1, v[i], fechas[i].mes, fechas[i].anyo);
+    
+	fclose(ptranscrip);
+	
 }

@@ -501,12 +501,15 @@ void operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, 
 			sumatoriocolumnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 6:
+			filas=17;
+			medianacolumnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 7:
 			break;
 		case 8:
 			break;
 		case 9:
+			ordenar_max_min_columnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 10:
 			break;

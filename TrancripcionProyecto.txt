@@ -1,4 +1,4 @@
 Esta es la transcripción del programa:
-El maximo en Hidráulica es 4517,602539 y se dio en feb del 21
+La mediana en ene-22 es 1,110916
 
 Fin del programa.
