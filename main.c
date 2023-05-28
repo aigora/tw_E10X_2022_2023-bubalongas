@@ -9,7 +9,8 @@
 
 
 //FUNCIONES
-int operaciones();
+int operacionesfilas();
+int operacionescolumnas();
 
 int main()
 {
@@ -74,7 +75,7 @@ int main()
 //	
 
   fscanf(pf, "%c", &x);
-  printf("%c", x);
+//  printf("%c", x);
 
   i=0;
   
@@ -99,22 +100,22 @@ int main()
 	}
   }
   
-/*printf("Tipo %s %f ", generacion[0][0].tipo, generacion[0][0].magnitud);
-  for(i=0; i<18; i++)
-  {
-	printf("Tipo %s: ", generacion[i][0].tipo);
-	for(j=0; j<24; j++)
-	{
-		printf("%f ", generacion[i][j].magnitud);
-	}
-  printf("\n");
-  }*/
+//  printf("Tipo %s %f ", generacion[0][0].tipo, generacion[0][0].magnitud);
+
+//  printf("Tipo %s %i \n", generacion[0][0].fecha.mes, generacion[0][0].fecha.anyo);
+
+//  for(i=0; i<18; i++)
+//  {
+//	printf("Tipo %s: ", generacion[i][0].tipo);
+//	for(j=0; j<24; j++)
+//	{
+//		printf("%f ", generacion[i][j].magnitud);
+//	}
+//  printf("\n");
+//  }
 	
   fclose(pf);
-  int filas=0, columnas=24;
-  i=0;
   
-  printf("El maximo en hidraulica es %f\n", maxtipo(generacion, filas, columnas));
   
   do{
 //  system("cls");
@@ -144,7 +145,7 @@ int main()
   		printf("11. Eólica\n");
   		printf("12. Solar fotovoltaica\n");
   		printf("13. Solar térmica\n");
-  		printf("14. Otras reonvavbles\n");
+  		printf("14. Otras reonvables\n");
   		printf("15. Cogeneración\n");
   		printf("16. Residuos no renovables\n");
   		printf("17. Residuos renovavles\n");
@@ -154,55 +155,55 @@ int main()
   		switch(num)
 		  	{
   			case 1:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 0);
   				break;
   			case 2:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 1);
   				break;
   			case 3:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 2);
   				break;
   			case 4:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 3);
   				break;
   			case 5:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 4);
   				break;
   			case 6:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 5);
   				break;
   			case 7:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 6);
   				break;
   			case 8:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 7);
   				break;
   			case 9:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 8);
   				break;
   			case 10:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 9);
   				break;
   			case 11:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 10);
   				break;
   			case 12:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 11);
   				break;
   			case 13:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 12);
   				break;
   			case 14:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 13);
   				break;
   			case 15:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 14);
   				break;
   			case 16:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 15);
   				break;
   			case 17:
-  				operacion = operaciones();
+  				operacion = operacionesfilas(generacion, 16);
   				break;
   			case 18:
   				break;
@@ -245,40 +246,40 @@ int main()
 				
 				switch(mes){
 		  			case 1:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas(generacion, 0);
 		  				break;
 		  			case 2:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 3:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 4:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 5:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 6:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 7:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 8:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 9:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 10:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 11:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 12:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 13:
 		  				break;
@@ -306,40 +307,40 @@ int main()
 				
 				switch(mes2){
 		  			case 1:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 2:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 3:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 4:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 5:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 6:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 7:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 8:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 9:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 10:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 11:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 12:
-		  				operacion = operaciones();
+		  				operacion = operacionescolumnas();
 		  				break;
 		  			case 13:
 		  				break;
@@ -370,9 +371,10 @@ int main()
 }
 
 //FUNCION PARA ELEGIR ESTUDIO ESTADISTICO
-int operaciones()
+int operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo)
 {
 	int op2;
+	int columnas;
 	system("cls");
   do{
 	printf("¿Qué tipo de estudio estadístico desea hacer? \n");
@@ -392,6 +394,88 @@ int operaciones()
 	switch(op2)
 	{
 		case 1:
+			columnas=24;
+			mediatipo(generacion, tipo, columnas);
+			return(1);
+			break;
+		case 2:
+			columnas=24;
+			modatipo(generacion, tipo, columnas);
+			return(2);
+			break;
+		case 3:
+			columnas=24;
+			maxtipo(generacion, tipo, columnas);
+			return(3);
+			break;
+		case 4:
+			columnas=24;
+			mintipo(generacion, tipo, columnas);
+			return(4);
+			break;
+		case 5:
+			columnas=24;
+			sumtipo(generacion, tipo, columnas);
+			return(5);
+			break;
+		case 6:
+			columnas=24;
+			medianatipo(generacion, tipo, columnas);
+			return(6);
+			break;
+		case 7:
+			columnas=24;
+			varianzatipo(generacion, tipo, columnas);
+			return(7);
+			break;
+		case 8:
+			columnas=24;
+			destipicatipo(generacion, tipo, columnas);
+			return(8);
+			break;
+		case 9:
+			return(9);
+			break;
+		case 10:
+			return(10);
+			break;
+		case 11:
+			system("cls");
+			break;
+		default:
+			system("cls");
+			printf("Opción no válida. Por favor seleccione una opción válida.\n");
+			break;
+	}	
+  }while (op2!=11);
+}
+
+
+int operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha)
+{
+	int op2;
+	int filas;
+	system("cls");
+  do{
+	printf("¿Qué tipo de estudio estadístico desea hacer? \n");
+	printf("1. Media\n");
+	printf("2. Moda\n");
+	printf("3. Hallar maximo\n");
+	printf("4. Hallar minimo\n");
+	printf("5. Sumatorio\n");
+	printf("6. Mediana\n");
+	printf("7. Varianza\n");
+	printf("8. Desviación típica\n");
+	printf("9. Ordenar de mayor a menor\n");
+	printf("10. Ordenar de menor a mayor\n");
+	printf("11. VOLVER ATRÁS\n");
+	scanf("%i", &op2);
+	
+	switch(op2)
+	{
+		case 1:
+			filas=17;
+			mediacolumna(generacion, filas, fecha);
 			return(1);
 			break;
 		case 2:
