@@ -433,3 +433,26 @@ float mincolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, in
   
   	return min;
 }
+
+
+// 2.4 SUMATORIO POR COLUMNAS
+float sumatoriocolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
+{
+	int i;
+    float sum = 0;
+    
+    for(i = 0; i < filas; i++)
+    {
+    	sum += matriz[i][columnas].magnitud;
+	}
+	
+	printf("\nEl sumatorio de %s-%i es %f\n\n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo, sum);	
+	
+  	ptranscrip = fopen("TrancripcionProyecto.txt", "a"); //HAY QUE VER SI SE TRANSCRIBE...
+  
+  	fprintf(ptranscrip, "El sumatorio de %s-%i es %f\n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo, sum);
+    
+  	fclose(ptranscrip);
+  	
+  	return sum;
+}

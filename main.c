@@ -497,6 +497,8 @@ void operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, 
 			mincolumnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 5:
+			filas=17;
+			sumatoriocolumnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 6:
 			break;
