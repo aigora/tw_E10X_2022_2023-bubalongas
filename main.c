@@ -410,42 +410,34 @@ void operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo, FILE
 		case 1:
 			columnas=24;
 			mediatipo(generacion, tipo, columnas, ptranscrip);
-			return(1);
 			break;
 		case 2:
 			columnas=24;
 			modatipo(generacion, tipo, columnas);//Esta mal
-			return(2);
 			break;
 		case 3:
 			columnas=24;
 			maxtipo(generacion, tipo, columnas, ptranscrip);
-			return(3);
 			break;
 		case 4:
 			columnas=24;
 			mintipo(generacion, tipo, columnas, ptranscrip);
-			return(4);
 			break;
 		case 5:
 			columnas=24;
 			sumtipo(generacion, tipo, columnas, ptranscrip);
-			return(5);
 			break;
 		case 6:
 			columnas=24;
 			medianatipo(generacion, tipo, columnas, ptranscrip);
-			return(6);
 			break;
 		case 7:
 			columnas=24;
 			varianzatipo(generacion, tipo, columnas, ptranscrip);
-			return(7);
 			break;
 		case 8:
 			columnas=24;
 			destipicatipo(generacion, tipo, columnas, ptranscrip);
-			return(8);
 		case 9:
 			break;
 		case 10:
@@ -491,8 +483,12 @@ void operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, 
 		case 2:
 			break;
 		case 3:
+			filas=17;
+			maxcolumnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 4:
+			filas=17;
+			mincolumnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 5:
 			break;

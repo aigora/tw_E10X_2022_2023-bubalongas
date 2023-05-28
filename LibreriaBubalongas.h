@@ -17,6 +17,7 @@ typedef struct{
 	date fecha; 
 }generacion_2122;
 
+// 1.1 MEDIA POR FILA
 float mediatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
     int i;
@@ -40,6 +41,7 @@ float mediatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas,
 	return media;
 }
 
+// 1.2 MODA POR FILA
 float modatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)//esta mal
 { 
   int i, ano = 0;
@@ -64,7 +66,8 @@ float modatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)/
   
   return moda;
 }
-  
+
+// 1.3 MAXIMO POR FILA
 float maxtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
 { 
   int i, ano=0;
@@ -96,7 +99,7 @@ float maxtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, F
   return max;
 }
 
-
+// 1.4 MINIMO POR FILA
 float mintipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
     int i, ano = 0;
@@ -128,6 +131,7 @@ float mintipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, F
     return min;
 }
 
+// 1.5 SUMA POR FILA
 float sumtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
     int i;
@@ -149,6 +153,7 @@ float sumtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, F
 	return sum;
 }
 
+// 1.6 MEDIANA POR FILA
 float medianatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
 	int i;
@@ -167,6 +172,7 @@ float medianatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columna
 	return mediana;
 }
 
+// 1.7 VARIANZA POR FILA
 float varianzatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
 	int i;
@@ -197,6 +203,7 @@ float varianzatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int column
 	return varianza;
 }
 
+// 1.8 DESVIACION TIPICA POR FILA
 float destipicatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
 	int i;
@@ -229,8 +236,53 @@ float destipicatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int colum
 	return desviaciontipica;
 }
 
-//falta ordenar ambas, para los meses
+// 1.9 ORDENAR DE MAYOR A MENOR POR FILAS
+void ordenar_max_min_filas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
+{
+	//NECESITO COPIAR VECTOR DEL EXCEL 
+	int i,j,mayor,k=24;
+	for( j=0; j<k-1; j++)
+	{
+		for (i=0; i < k-1; i++)
+		{
+			if (v[i]< v[i+1])
+				{
+				mayor = v[i];
+				v[i] =v[i+1];
+				v[i+1]=mayor;
+				}
+		}
+		
+   	}
+	for (i=0; i< k; i++)
+		printf ("%d) %d\n", i+1, v[i]);
+	printf("\n\n");
+}
 
+// 1.10 ORDENAR DE MENOR A MAYOR POR FILAS
+void ordenar_min_max_filas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
+{
+	//NECESITO COPIAR VECTOR DEL EXCEL 
+	int i,j,mayor,k=24;
+	for(j =0; j < k-1; j++)
+	{
+		for (i=0; i < k-1; i++)
+		{
+			if (v[i]> v[i+1])
+			{
+				mayor = v[i];
+				v[i] =v[i+1];
+				v[i+1]=mayor;
+			}
+		}
+	}
+	for (i=0; i< k; i++)
+		printf ("%d) %d\n", i+1, v[i]);
+	printf("\n\n");
+
+}
+
+// 2.1 MEDIA POR COLUMNAS
 float mediacolumna(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
     int i;
@@ -254,27 +306,72 @@ float mediacolumna(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, i
 	return media;
 }
 
-float maxcolumnas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
+// 2.2 MAXIMO POR COLUMNAS
+float maxcolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
 { 
-  int i, ano=0;
-  float max=0;
-  char mes[10];
+	int i, ano=0;
+  	float max=0;
+  	char mes[10];
+  	char tipo[100];
   
-  max=matriz[filas][0].magnitud;
-  ano=matriz[filas][0].fecha.anyo;
-  strcpy(mes, matriz[filas][0].fecha.mes);
+ 	max=matriz[0][columnas].magnitud;
+  	ano=matriz[0][columnas].fecha.anyo;
+  	strcpy(mes, matriz[0][columnas].fecha.mes);
+  	strcpy(tipo, matriz[filas][0].tipo);
   
-  for(i=1; i<columnas; i++)
-  {
-  	if(matriz[filas][i].magnitud>max)
+  	for(i=1; i<filas; i++)
   	{
-  		max=matriz[filas][i].magnitud;
-  		ano=matriz[filas][i].fecha.anyo;
-  		strcpy(mes, matriz[filas][i].fecha.mes);
-    }
-  }
+  		if(matriz[i][columnas].magnitud>max)
+  		{
+  			max=matriz[i][columnas].magnitud;
+  			ano=matriz[i][columnas].fecha.anyo;
+  			strcpy(mes, matriz[i][columnas].fecha.mes);
+  			strcpy(tipo, matriz[i][columnas].tipo);
+    	}
+  	}
   
-  printf("\nEl maximo en %s es %f y se dio en %s del %i\n\n", matriz[filas][0].tipo, max, mes, ano);
+  	printf("\nEl maximo en %s del %i es %f y se dio en %s\n\n", mes, ano, max, tipo);
   
-  return max;
+  	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+  	fprintf(ptranscrip, "El maximo en %s del %i es %f y se dio en %s\n", mes, ano, max, tipo);
+    
+  	fclose(ptranscrip);
+  
+  	return max;
+}
+
+// 2.3 MINIMO POR COLUMNAS
+float mincolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
+{ 
+	int i, ano=0;
+  	float min=0;
+  	char mes[10];
+  	char tipo[100];
+  
+ 	min=matriz[0][columnas].magnitud;
+  	ano=matriz[0][columnas].fecha.anyo;
+  	strcpy(mes, matriz[0][columnas].fecha.mes);
+  	strcpy(tipo, matriz[filas][0].tipo);
+  
+  	for(i=1; i<filas; i++)
+  	{
+  		if(matriz[i][columnas].magnitud < min)
+  		{
+  			min=matriz[i][columnas].magnitud;
+  			ano=matriz[i][columnas].fecha.anyo;
+  			strcpy(mes, matriz[i][columnas].fecha.mes);
+  			strcpy(tipo, matriz[i][columnas].tipo);
+    	}
+  	}
+  
+  	printf("\nEl minimo en %s del %i es %f y se dio en %s\n\n", mes, ano, min, tipo);
+  
+  	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+  	fprintf(ptranscrip, "El minimo en %s del %i es %f y se dio en %s\n", mes, ano, min, tipo);
+    
+  	fclose(ptranscrip);
+  
+  	return min;
 }
