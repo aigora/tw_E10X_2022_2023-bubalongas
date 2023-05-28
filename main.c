@@ -444,6 +444,8 @@ void operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo, FILE
 			ordenar_max_min_filas(generacion, tipo, columnas, ptranscrip);
 			break;
 		case 10:
+			columnas=24;
+			ordenar_min_max_filas(generacion, tipo, columnas, ptranscrip);
 			break;
 		case 11:
 			system("cls");

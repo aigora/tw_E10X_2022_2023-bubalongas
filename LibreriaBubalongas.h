@@ -292,10 +292,23 @@ void ordenar_max_min_filas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, in
 // 1.10 ORDENAR DE MENOR A MAYOR POR FILAS
 void ordenar_min_max_filas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
 {
-	//NECESITO COPIAR VECTOR DEL EXCEL 
-	int i,j,mayor,k=24;
-	float v[24];
+	 
+	int i,j,ano_mayor,k=24;
+	float v[24], mayor;
+	char cadenaaux[10];
+	date fechas[24];
 	
+	for (i=0; i < k; i++)
+	{
+		v[i]=matriz[filas][i].magnitud;
+	}
+	
+	for (i=0; i < k; i++)
+	{
+		fechas[i].anyo=matriz[filas][i].fecha.anyo;
+		strcpy(fechas[i].mes, matriz[filas][i].fecha.mes);
+	}
+
 	for(j =0; j < k-1; j++)
 	{
 		for (i=0; i < k-1; i++)
@@ -305,12 +318,25 @@ void ordenar_min_max_filas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, in
 				mayor = v[i];
 				v[i] =v[i+1];
 				v[i+1]=mayor;
+				ano_mayor = fechas[i].anyo;
+				fechas[i].anyo = fechas[i+1].anyo;
+				fechas[i+1].anyo = ano_mayor;
+				strcpy(cadenaaux, fechas[i].mes);
+				strcpy(fechas[i].mes, fechas[i+1].mes);
+				strcpy(fechas[i+1].mes, cadenaaux);
 			}
 		}
 	}
 	for (i=0; i< k; i++)
-		printf ("%d) %d\n", i+1, v[i]);
+		printf ("%d) %f en %s-%i\n", i+1, v[i], fechas[i].mes, fechas[i].anyo);
 	printf("\n\n");
+	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    for (i=0; i< k; i++)
+		fprintf(ptranscrip, "%d) %f en %s-%i\n", i+1, v[i], fechas[i].mes, fechas[i].anyo);
+    
+	fclose(ptranscrip);
 
 }
 
