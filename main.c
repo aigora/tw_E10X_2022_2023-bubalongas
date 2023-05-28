@@ -113,6 +113,7 @@ int main()
 //	}
 //  printf("\n");
 //  }
+
 	
   fclose(pf);
   
@@ -372,6 +373,7 @@ int main()
 	
 	printf("Fin del programa.\n");
 	
+	
 	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
   
     fprintf(ptranscrip, "\nFin del programa.\n");
@@ -462,7 +464,7 @@ int operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo)
 }
 
 
-int operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha)
+int operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, FILE *ptranscrip)
 {
 	int op2;
 	int filas;
@@ -486,7 +488,7 @@ int operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha)
 	{
 		case 1:
 			filas=17;
-			mediacolumna(generacion, filas, fecha);
+			mediacolumna(generacion, filas, fecha, ptranscrip);
 			return(1);
 			break;
 		case 2:

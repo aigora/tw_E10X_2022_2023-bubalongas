@@ -190,7 +190,7 @@ float destipicatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int colum
 
 //falta ordenar ambas, para los meses
 
-float mediacolumna(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas) 
+float mediacolumna(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
     int i;
     float media = 0, suma = 0;
@@ -207,8 +207,8 @@ float mediacolumna(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, i
 	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
   
     fprintf(ptranscrip, "La media en %s-%i es %f\n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo, media);
-  
-    fclose(ptranscrip);
-	
+    
+	fclose(ptranscrip);
+  	 
 	return media;
 }
