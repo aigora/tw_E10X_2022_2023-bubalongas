@@ -525,3 +525,5 @@ void operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, 
 }
 
 
+
+
