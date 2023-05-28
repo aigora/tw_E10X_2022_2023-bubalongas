@@ -22,7 +22,7 @@ int main()
   setlocale(LC_CTYPE,"spanish");
   setlocale(LC_NUMERIC, "spanish");
   
-  FILE *pf;
+  FILE *pf, *ptranscrip;
   pf = fopen("ProyectoInforREE.csv", "r");
   
   if (pf == NULL)
@@ -116,6 +116,11 @@ int main()
 	
   fclose(pf);
   
+  ptranscrip = fopen("TrancripcionProyecto.txt", "w");
+  
+  fprintf(ptranscrip, "Esta es la transcripción del programa:\n");
+  
+  fclose(ptranscrip);
   
   do{
 //  system("cls");
@@ -366,6 +371,12 @@ int main()
 	}while(op!=3);
 	
 	printf("Fin del programa.\n");
+	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip, "\nFin del programa.\n");
+  
+    fclose(ptranscrip);
 	
   return 0;
 }
