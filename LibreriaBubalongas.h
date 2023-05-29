@@ -561,54 +561,54 @@ float destipicacolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int fil
 // 2.9 ORDENAR DE MÁXIMO A MÍNIMO POR COLUMNAS
 void ordenar_max_min_columnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
 {
-
-	int i,j,k=17, ano_mayor;
+	int i,j,k=17;
 	float v[17], mayor;
 	char cadenaaux[50];
-	date fechas[24];
+	generacion_2122 tipos[50];
 	
 	for (i=0; i < k; i++)
 	{
-		v[i]=matriz[filas][i].magnitud;
+		v[i]=matriz[i][columnas].magnitud;
 	}
+
 	
 	for (i=0; i < k; i++)
 	{
-		fechas[i].anyo=matriz[filas][i].fecha.anyo;
-		strcpy(fechas[i].mes, matriz[filas][i].fecha.mes);
+		strcpy(tipos[i].tipo, matriz[i][0].tipo);
 	}
 	
-	
-	for( j=0; j<k-1; j++)
+
+	for(j =0; j < k-1; j++)
 	{
 		for (i=0; i < k-1; i++)
 		{
 			if (v[i]< v[i+1])
-				{
+			{
 				mayor = v[i];
 				v[i] =v[i+1];
 				v[i+1]=mayor;
-				ano_mayor = fechas[i].anyo;
-				fechas[i].anyo = fechas[i+1].anyo;
-				fechas[i+1].anyo = ano_mayor;
-				strcpy(cadenaaux, fechas[i].mes);
-				strcpy(fechas[i].mes, fechas[i+1].mes);
-				strcpy(fechas[i+1].mes, cadenaaux);
-				}
+				strcpy(cadenaaux, tipos[i].tipo);
+				strcpy(tipos[i].tipo, tipos[i+1].tipo);
+				strcpy(tipos[i+1].tipo, cadenaaux);
+			}
 		}
-		
-   	}
+	}
+	
+	
 	for (i=0; i< k; i++)
-		printf ("%d) %f en %s-%i\n", i+1, v[i], fechas[i].mes, fechas[i].anyo);
+		printf ("%d) %f en %s\n", i+1, v[i], tipos[i].tipo);
 	printf("\n\n");
 	
 	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+	
+	fprintf(ptranscrip, "La ordenación de menor a mayor en %s-%i es: \n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo);
   
     for (i=0; i< k; i++)
-		fprintf(ptranscrip, "%d) %f en %s-%i\n", i+1, v[i], fechas[i].mes, fechas[i].anyo);
+		fprintf(ptranscrip, "%d) %f en %s\n", i+1, v[i], tipos[i].tipo);
+		
+	fprintf(ptranscrip, "\n\n");
     
 	fclose(ptranscrip);
-	
 }
 
 // 2.10 ORDENAR DE MENOR A MAYOR POR COLUMNAS
