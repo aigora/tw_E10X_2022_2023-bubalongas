@@ -1,18 +1,50 @@
 Esta es la transcripción del programa:
-1) 0,501755 en Hidroeólica
-2) 28,766272 en Turbina de gas
-3) 59,850281 en Residuos renovables
-4) 102,634026 en Solar térmica
-5) 116,282051 en Turbina de vapor
-6) 182,932083 en Residuos no renovables
-7) 203,759979 en Motores diésel
-8) 320,531403 en Turbinación bombeo
-9) 390,590393 en Otras renovables
-10) 557,975952 en Carbón
-11) 848,403076 en Solar fotovoltaica
-12) 2405,236816 en Cogeneración
-13) 2729,183105 en Ciclo combinado
-14) 4057,346680 en Hidráulica
-15) 5199,740723 en Nuclear
-16) 7101,249023 en Eólica
-17) 1094709925990181000000000000,000000 en Fuel + Gas
+La ordenación de mayor a menor en Cogeneración es: 
+1) 2405,236816 en ene-21
+2) 2253,823730 en mar-21
+3) 2243,226318 en jul-21
+4) 2217,055664 en mar-22
+5) 2206,328857 en may-21
+6) 2193,285156 en abr-21
+7) 2181,276855 en jun-21
+8) 2175,103516 en dic-21
+9) 2173,751709 en nov-21
+10) 2166,255127 en sep-21
+11) 2147,921631 en ene-22
+12) 2147,907227 en oct-21
+13) 2119,152832 en feb-22
+14) 2106,285400 en ago-21
+15) 1870,643921 en may-22
+16) 1838,165771 en feb-21
+17) 1709,641479 en abr-22
+18) 1467,383545 en jun-22
+19) 1453,363647 en nov-22
+20) 1102,000366 en oct-22
+21) 1098,167358 en dic-22
+22) 1053,738159 en jul-22
+23) 779,411011 en ago-22
+24) 739,190796 en sep-22
+
+
+La ordenación de menor a mayor en ago-22 es: 
+1) 0,000000 en Fuel + Gas
+2) 3,517675 en Hidroeólica
+3) 65,488152 en Residuos renovables
+4) 85,527649 en Turbina de gas
+5) 102,417015 en Turbina de vapor
+6) 164,769531 en Residuos no renovables
+7) 245,673508 en Motores diésel
+8) 339,372162 en Turbinación bombeo
+9) 383,442352 en Otras renovables
+10) 619,958984 en Solar térmica
+11) 779,411011 en Cogeneración
+12) 819,592529 en Carbón
+13) 972,977722 en Hidráulica
+14) 3239,672363 en Solar fotovoltaica
+15) 4258,846680 en Eólica
+16) 5122,046875 en Nuclear
+17) 8082,027832 en Ciclo combinado
+
+
+
+Fin del programa.

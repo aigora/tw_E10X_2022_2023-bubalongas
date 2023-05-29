@@ -282,9 +282,12 @@ void ordenar_max_min_filas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, in
 	
 	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
   
+    fprintf(ptranscrip, "La ordenación de mayor a menor en %s es: \n", matriz[filas][0].tipo);
+    
     for (i=0; i< k; i++)
 		fprintf(ptranscrip, "%d) %f en %s-%i\n", i+1, v[i], fechas[i].mes, fechas[i].anyo);
     
+    fprintf(ptranscrip, "\n\n");
 	fclose(ptranscrip);
 	
 }
@@ -294,7 +297,7 @@ void ordenar_min_max_filas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, in
 {
 	 
 	int i,j,ano_mayor,k=24;
-	float v[24], mayor;
+	float v[24], menor;
 	char cadenaaux[10];
 	date fechas[24];
 	
@@ -315,9 +318,9 @@ void ordenar_min_max_filas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, in
 		{
 			if (v[i]> v[i+1])
 			{
-				mayor = v[i];
+				menor = v[i];
 				v[i] =v[i+1];
-				v[i+1]=mayor;
+				v[i+1]=menor;
 				ano_mayor = fechas[i].anyo;
 				fechas[i].anyo = fechas[i+1].anyo;
 				fechas[i+1].anyo = ano_mayor;
@@ -333,8 +336,12 @@ void ordenar_min_max_filas(generacion_2122 matriz[][NUM_COLUMNAS], int filas, in
 	
 	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
   
+    fprintf(ptranscrip, "La ordenación de menor a mayor en %s es: \n", matriz[filas][0].tipo);
+    
     for (i=0; i< k; i++)
 		fprintf(ptranscrip, "%d) %f en %s-%i\n", i+1, v[i], fechas[i].mes, fechas[i].anyo);
+    
+    fprintf(ptranscrip, "\n\n");
     
 	fclose(ptranscrip);
 
@@ -557,7 +564,7 @@ void ordenar_max_min_columnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], i
 
 	int i,j,k=17, ano_mayor;
 	float v[17], mayor;
-	char cadenaaux[10];
+	char cadenaaux[50];
 	date fechas[24];
 	
 	for (i=0; i < k; i++)
@@ -604,23 +611,25 @@ void ordenar_max_min_columnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], i
 	
 }
 
-// 2.9 ORDENAR DE MENOR A MAYOR POR COLUMNAS
+// 2.10 ORDENAR DE MENOR A MAYOR POR COLUMNAS
 void ordenar_min_max_columnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
 {
 	int i,j,k=17;
-	float v[17], mayor;
-	char cadenaaux[10];
+	float v[17], menor;
+	char cadenaaux[50];
 	generacion_2122 tipos[50];
 	
 	for (i=0; i < k; i++)
 	{
 		v[i]=matriz[i][columnas].magnitud;
 	}
+
 	
 	for (i=0; i < k; i++)
 	{
 		strcpy(tipos[i].tipo, matriz[i][0].tipo);
 	}
+	
 
 	for(j =0; j < k-1; j++)
 	{
@@ -628,23 +637,29 @@ void ordenar_min_max_columnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], i
 		{
 			if (v[i]> v[i+1])
 			{
-				mayor = v[i];
+				menor = v[i];
 				v[i] =v[i+1];
-				v[i+1]=mayor;
+				v[i+1]=menor;
 				strcpy(cadenaaux, tipos[i].tipo);
 				strcpy(tipos[i].tipo, tipos[i+1].tipo);
 				strcpy(tipos[i+1].tipo, cadenaaux);
 			}
 		}
 	}
+	
+	
 	for (i=0; i< k; i++)
 		printf ("%d) %f en %s\n", i+1, v[i], tipos[i].tipo);
 	printf("\n\n");
 	
 	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+	
+	fprintf(ptranscrip, "La ordenación de menor a mayor en %s-%i es: \n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo);
   
     for (i=0; i< k; i++)
 		fprintf(ptranscrip, "%d) %f en %s\n", i+1, v[i], tipos[i].tipo);
+		
+	fprintf(ptranscrip, "\n\n");
     
 	fclose(ptranscrip);
 

@@ -9,8 +9,8 @@
 
 
 //FUNCIONES
-void operacionesfilas();
-void operacionescolumnas();
+void operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo, FILE *ptranscrip);
+void operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, FILE *ptranscrip);
 
 int main()
 {
@@ -162,55 +162,55 @@ int main()
   		switch(num)
 		  	{
   			case 1:
-  				operacionesfilas(generacion, 0);
+  				operacionesfilas(generacion, 0, ptranscrip);
   				break;
   			case 2:
-  				operacionesfilas(generacion, 1);
+  				operacionesfilas(generacion, 1, ptranscrip);
   				break;
   			case 3:
-  				operacionesfilas(generacion, 2);
+  				operacionesfilas(generacion, 2, ptranscrip);
   				break;
   			case 4:
-  				operacionesfilas(generacion, 3);
+  				operacionesfilas(generacion, 3, ptranscrip);
   				break;
   			case 5:
-  				operacionesfilas(generacion, 4);
+  				operacionesfilas(generacion, 4, ptranscrip);
   				break;
   			case 6:
-  				operacionesfilas(generacion, 5);
+  				operacionesfilas(generacion, 5, ptranscrip);
   				break;
   			case 7:
-  				operacionesfilas(generacion, 6);
+  				operacionesfilas(generacion, 6, ptranscrip);
   				break;
   			case 8:
-  				operacionesfilas(generacion, 7);
+  				operacionesfilas(generacion, 7, ptranscrip);
   				break;
   			case 9:
-  				operacionesfilas(generacion, 8);
+  				operacionesfilas(generacion, 8, ptranscrip);
   				break;
   			case 10:
-  				operacionesfilas(generacion, 9);
+  				operacionesfilas(generacion, 9, ptranscrip);
   				break;
   			case 11:
-  				operacionesfilas(generacion, 10);
+  				operacionesfilas(generacion, 10, ptranscrip);
   				break;
   			case 12:
-  				operacionesfilas(generacion, 11);
+  				operacionesfilas(generacion, 11, ptranscrip);
   				break;
   			case 13:
-  				operacionesfilas(generacion, 12);
+  				operacionesfilas(generacion, 12, ptranscrip);
   				break;
   			case 14:
-  				operacionesfilas(generacion, 13);
+  				operacionesfilas(generacion, 13, ptranscrip);
   				break;
   			case 15:
-  				operacionesfilas(generacion, 14);
+  				operacionesfilas(generacion, 14, ptranscrip);
   				break;
   			case 16:
-  				operacionesfilas(generacion, 15);
+  				operacionesfilas(generacion, 15, ptranscrip);
   				break;
   			case 17:
-  				operacionesfilas(generacion, 16);
+  				operacionesfilas(generacion, 16, ptranscrip);
   				break;
   			case 18:
   				break;
@@ -253,40 +253,40 @@ int main()
 				
 				switch(mes){
 		  			case 1:
-		  				operacionescolumnas(generacion, 0);
+		  				operacionescolumnas(generacion, 0, ptranscrip);
 		  				break;
 		  			case 2:
-		  				operacionescolumnas(generacion, 1);
+		  				operacionescolumnas(generacion, 1, ptranscrip);
 		  				break;
 		  			case 3:
-		  				operacionescolumnas(generacion, 2);
+		  				operacionescolumnas(generacion, 2, ptranscrip);
 		  				break;
 		  			case 4:
-		  				operacionescolumnas(generacion, 3);
+		  				operacionescolumnas(generacion, 3, ptranscrip);
 		  				break;
 		  			case 5:
-		  				operacionescolumnas(generacion, 4);
+		  				operacionescolumnas(generacion, 4, ptranscrip);
 		  				break;
 		  			case 6:
-		  				operacionescolumnas(generacion, 5);
+		  				operacionescolumnas(generacion, 5, ptranscrip);
 		  				break;
 		  			case 7:
-		  				operacionescolumnas(generacion, 6);
+		  				operacionescolumnas(generacion, 6, ptranscrip);
 		  				break;
 		  			case 8:
-		  				operacionescolumnas(generacion, 7);
+		  				operacionescolumnas(generacion, 7, ptranscrip);
 		  				break;
 		  			case 9:
-		  				operacionescolumnas(generacion, 8);
+		  				operacionescolumnas(generacion, 8, ptranscrip);
 		  				break;
 		  			case 10:
-		  				operacionescolumnas(generacion, 9);
+		  				operacionescolumnas(generacion, 9, ptranscrip);
 		  				break;
 		  			case 11:
-		  				operacionescolumnas(generacion, 10);
+		  				operacionescolumnas(generacion, 10, ptranscrip);
 		  				break;
 		  			case 12:
-		  				operacionescolumnas(generacion, 11);
+		  				operacionescolumnas(generacion, 11, ptranscrip);
 		  				break;
 		  			case 13:
 		  				break;
@@ -314,40 +314,40 @@ int main()
 				
 				switch(mes2){
 		  			case 1:
-		  				operacionescolumnas(generacion, 12);
+		  				operacionescolumnas(generacion, 12, ptranscrip);
 		  				break;
 		  			case 2:
-		  				operacionescolumnas(generacion, 13);
+		  				operacionescolumnas(generacion, 13, ptranscrip);
 		  				break;
 		  			case 3:
-		  				operacionescolumnas(generacion, 14);
+		  				operacionescolumnas(generacion, 14, ptranscrip);
 		  				break;
 		  			case 4:
-		  				operacionescolumnas(generacion, 15);
+		  				operacionescolumnas(generacion, 15, ptranscrip);
 		  				break;
 		  			case 5:
-		  				operacionescolumnas(generacion, 16);
+		  				operacionescolumnas(generacion, 16, ptranscrip);
 		  				break;
 		  			case 6:
-		  				operacionescolumnas(generacion, 17);
+		  				operacionescolumnas(generacion, 17, ptranscrip);
 		  				break;
 		  			case 7:
-		  				operacionescolumnas(generacion, 18);
+		  				operacionescolumnas(generacion, 18, ptranscrip);
 		  				break;
 		  			case 8:
-		  				operacionescolumnas(generacion, 19);
+		  				operacionescolumnas(generacion, 19, ptranscrip);
 		  				break;
 		  			case 9:
-		  				operacionescolumnas(generacion, 20);
+		  				operacionescolumnas(generacion, 20, ptranscrip);
 		  				break;
 		  			case 10:
-		  				operacionescolumnas(generacion, 21);
+		  				operacionescolumnas(generacion, 21, ptranscrip);
 		  				break;
 		  			case 11:
-		  				operacionescolumnas(generacion, 22);
+		  				operacionescolumnas(generacion, 22, ptranscrip);
 		  				break;
 		  			case 12:
-		  				operacionescolumnas(generacion, 23);
+		  				operacionescolumnas(generacion, 23, ptranscrip);
 		  				break;
 		  			case 13:
 		  				break;
@@ -383,6 +383,8 @@ int main()
 	
   return 0;
 }
+
+
 
 //FUNCION PARA ELEGIR ESTUDIO ESTADISTICO
 
@@ -530,7 +532,5 @@ void operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, 
 	}	
   }while (op2!=11);
 }
-
-
 
 
