@@ -182,12 +182,47 @@ float sumtipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, F
 // 1.6 MEDIANA POR FILA
 float medianatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
-	int i;
 	float mediana = 0;
+	int i,j,k=24, ano_mayor;
+	float v[24], mayor;
+	char cadenaaux[10];
+	date fechas[24];
 	
-	mediana = (matriz[filas][11].magnitud + matriz[filas][12].magnitud) / 2.0;
+	for (i=0; i < k; i++)
+	{
+		v[i]=matriz[filas][i].magnitud;
+	}
 	
-	printf("\nLa mediana en %s es %f\n\n", matriz[filas][0].tipo, mediana);
+	for (i=0; i < k; i++)
+	{
+		fechas[i].anyo=matriz[filas][i].fecha.anyo;
+		strcpy(fechas[i].mes, matriz[filas][i].fecha.mes);
+	}
+	
+	
+	for( j=0; j<k-1; j++)
+	{
+		for (i=0; i < k-1; i++)
+		{
+			if (v[i]< v[i+1])
+				{
+				mayor = v[i];
+				v[i] =v[i+1];
+				v[i+1]=mayor;
+				ano_mayor = fechas[i].anyo;
+				fechas[i].anyo = fechas[i+1].anyo;
+				fechas[i+1].anyo = ano_mayor;
+				strcpy(cadenaaux, fechas[i].mes);
+				strcpy(fechas[i].mes, fechas[i+1].mes);
+				strcpy(fechas[i+1].mes, cadenaaux);
+				}
+		}
+		
+   	}
+   	
+   	mediana = ( v[11] + v[12] ) / 2.0;
+   	
+   	printf("\nLa mediana en %s es %f\n\n", matriz[filas][0].tipo, mediana);
 	
 	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
   
@@ -546,20 +581,50 @@ float sumatoriocolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int fil
 // 2.6 MEDIANA POR COLUMNAS
 float medianacolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
 {
-	int i;
-	float mediana = 0;
+	int i,j,k=17;
+	float mediana;
+	float v[17], mayor;
+	char cadenaaux[50];
+	generacion_2122 tipos[50];
 	
-	mediana = (matriz[9][columnas].magnitud);
+	for (i=0; i < k; i++)
+	{
+		v[i]=matriz[i][columnas].magnitud;
+	}
+
+	for (i=0; i < k; i++)
+	{
+		strcpy(tipos[i].tipo, matriz[i][0].tipo);
+	}
 	
-	printf("\nLa mediana en %s-%i es %f\n\n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo, mediana);
+	for(j =0; j < k-1; j++)
+	{
+		for (i=0; i < k-1; i++)
+		{
+			if (v[i]< v[i+1])
+			{
+				mayor = v[i];
+				v[i] =v[i+1];
+				v[i+1]=mayor;
+				strcpy(cadenaaux, tipos[i].tipo);
+				strcpy(tipos[i].tipo, tipos[i+1].tipo);
+				strcpy(tipos[i+1].tipo, cadenaaux);
+			}
+		}
+	}
+	
+	mediana = v[8];
+   	
+   	printf("\nLa mediana es %f y representa el tipo %s.\n\n", mediana, matriz[0][columnas].tipo);
 	
 	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
   
-    fprintf(ptranscrip, "La mediana en %s-%i es %f\n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo, mediana);
+    fprintf(ptranscrip, "La mediana es %f y representa el tipo %s.\n", mediana, matriz[0][columnas].tipo);
     
 	fclose(ptranscrip);	
 	
 	return mediana;
+	
 }
 
 // 2.7 VARIANZA POR COLUMNAS

@@ -1,4 +1,22 @@
 Esta es la transcripción del programa:
-No hay moda.
+La mediana es 176,266724 y representa el tipo Hidráulica.
+La ordenación de mayor a menor en feb-21 es: 
+1) 6294,982910 en Eólica
+2) 4517,602539 en Hidráulica
+3) 4358,515137 en Nuclear
+4) 1838,165771 en Cogeneración
+5) 1544,065796 en Ciclo combinado
+6) 973,686890 en Solar fotovoltaica
+7) 401,293213 en Turbinación bombeo
+8) 365,191895 en Otras renovables
+9) 176,266724 en Carbón
+10) 172,740341 en Residuos no renovables
+11) 160,418091 en Motores diésel
+12) 138,181320 en Solar térmica
+13) 104,960846 en Turbina de vapor
+14) 69,065865 en Residuos renovables
+15) 18,026131 en Turbina de gas
+16) 1,226483 en Hidroeólica
+17) 0,000000 en Fuel + Gas
 
-Fin del programa.
+
