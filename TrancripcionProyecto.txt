@@ -1,21 +1,2 @@
 Esta es la transcripción del programa:
-La ordenación de menor a mayor en jun-22 es: 
-1) 6478,937500 en Ciclo combinado
-2) 4459,458984 en Nuclear
-3) 3807,180908 en Eólica
-4) 3215,923340 en Solar fotovoltaica
-5) 1467,383545 en Cogeneración
-6) 1190,985474 en Hidráulica
-7) 833,220459 en Carbón
-8) 534,185913 en Solar térmica
-9) 415,748779 en Otras renovables
-10) 270,923920 en Turbinación bombeo
-11) 224,847290 en Motores diésel
-12) 155,903961 en Residuos no renovables
-13) 76,946930 en Residuos renovables
-14) 60,625900 en Turbina de vapor
-15) 47,734020 en Turbina de gas
-16) 2,449560 en Hidroeólica
-17) 0,000000 en Fuel + Gas
-
-
+No hay moda.

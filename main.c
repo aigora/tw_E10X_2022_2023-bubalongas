@@ -416,7 +416,7 @@ void operacionesfilas(generacion_2122 generacion[][NUM_COLUMNAS], int tipo, FILE
 			break;
 		case 2:
 			columnas=24;
-			modatipo(generacion, tipo, columnas);//Esta mal
+			modatipo(generacion, tipo, columnas, ptranscrip);
 			break;
 		case 3:
 			columnas=24;
@@ -489,6 +489,8 @@ void operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, 
 			mediacolumna(generacion, filas, fecha, ptranscrip);
 			break;
 		case 2:
+			filas=17;
+			modacolumnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 3:
 			filas=17;

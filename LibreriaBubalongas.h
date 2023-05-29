@@ -42,28 +42,35 @@ float mediatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas,
 }
 
 // 1.2 MODA POR FILA
-float modatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas)//esta mal
+float modatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
 { 
-  int i, ano = 0;
+  int i, j;
   float moda = 0;
-  char mes[10];
   
-  moda = matriz[filas][0].magnitud;
-  ano = matriz[filas][0].fecha.anyo;
-  strcpy(mes, matriz[filas][0].fecha.mes);
-  
-  for(i = 1; i < columnas; i++)
+  for (i = 1; i < columnas; i++) 
   {
-  	if(matriz[filas][i].magnitud > moda)
+  	for (j = i + 1; j < columnas; j++) 
   	{
-  		moda = matriz[filas][i].magnitud;
-  		ano = matriz[filas][i].fecha.anyo;
-  		strcpy(mes, matriz[filas][i].fecha.mes);
-    }
+  		if (matriz[filas][i].magnitud == matriz[filas][j].magnitud)
+  		{
+  			printf("La moda es %f", matriz[filas][i].magnitud);
+			
+			moda = 1;	
+		}
+	}
   }
   
-  printf("\nLa moda en %s es %f y se dio en %s del %i\n\n", matriz[filas][0].tipo, moda, mes, ano);
+  if (!moda)
+	{
+        printf("\nNo hay moda.\n\n");
+    }
   
+  ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+  fprintf(ptranscrip, "No hay moda.\n");
+    
+  fclose(ptranscrip);
+
   return moda;
 }
 
@@ -372,6 +379,37 @@ float mediacolumna(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, i
 }
 
 // 2.2 MODA POR COLUMNAS
+float modacolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
+{ 
+  int i, j;
+  float moda = 0;
+  
+  for (i = 1; i < filas; i++) 
+  {
+  	for (j = i + 1; j < filas; j++) 
+  	{
+  		if (matriz[i][columnas].magnitud == matriz[j][columnas].magnitud)
+  		{
+  			printf("La moda es %f", matriz[i][columnas].magnitud);
+			
+			moda = 1;	
+		}
+	}
+  }
+  
+  if (!moda)
+	{
+        printf("\nNo hay moda.\n\n");
+    }
+  
+  ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+  fprintf(ptranscrip, "No hay moda.\n");
+    
+  fclose(ptranscrip);
+
+  return moda;
+}
 
 // 2.3 MAXIMO POR COLUMNAS
 float maxcolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
