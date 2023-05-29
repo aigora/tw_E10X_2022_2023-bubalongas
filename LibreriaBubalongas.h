@@ -390,11 +390,11 @@ float maxcolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, in
     	}
   	}
   
-  	printf("\nEl maximo en %s del %i es %f y se dio en %s\n\n", mes, ano, max, tipo);
+  	printf("\nEl maximo en %s-%i es %f y se dio en %s\n\n", mes, ano, max, tipo);
   
   	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
   
-  	fprintf(ptranscrip, "El maximo en %s del %i es %f y se dio en %s\n", mes, ano, max, tipo);
+  	fprintf(ptranscrip, "El maximo en %s-%i es %f y se dio en %s\n", mes, ano, max, tipo);
     
   	fclose(ptranscrip);
   
@@ -425,11 +425,11 @@ float mincolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, in
     	}
   	}
   
-  	printf("\nEl minimo en %s del %i es %f y se dio en %s\n\n", mes, ano, min, tipo);
+  	printf("\nEl minimo en %s-%i es %f y se dio en %s\n\n", mes, ano, min, tipo);
   
   	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
   
-  	fprintf(ptranscrip, "El minimo en %s del %i es %f y se dio en %s\n", mes, ano, min, tipo);
+  	fprintf(ptranscrip, "El minimo en %s-%i es %f y se dio en %s\n", mes, ano, min, tipo);
     
   	fclose(ptranscrip);
   
@@ -480,7 +480,76 @@ float medianacolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas
 }
 
 // 2.7 VARIANZA POR COLUMNAS
+float varianzacolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
+{
+	int i, ano=0;
+    float media = 0, suma = 0, varianza = 0, varianza_numerador = 0;
+    char mes[10];
+    
+    ano=matriz[0][columnas].fecha.anyo;
+  	strcpy(mes, matriz[0][columnas].fecha.mes);
+    
+    for(i = 0; i < filas; i++)
+    {
+    	suma += matriz[i][columnas].magnitud;
+	}
+	
+	media = suma / filas;
+	
+	for(i = 0; i < filas; i++)
+    {
+    	varianza_numerador += pow(matriz[i][columnas].magnitud - media, 2);
+	}
+	
+	varianza = varianza_numerador / filas;
+	
+	printf("\nLa varianza en %s-%i es %f\n\n", mes, ano, varianza);
+	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip, "\nLa varianza en %s-%i es %f\n\n", mes, ano, varianza);
+    
+	fclose(ptranscrip);	
+	
+	return varianza;
+}
+
 // 2.8 DESVIACIÓN TÍPICA POR COLUMNAS
+float destipicacolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip) 
+{
+	int i, ano=0;
+    float media = 0, suma = 0, varianza = 0, varianza_numerador = 0, desviaciontipica = 0;
+    char mes[10];
+    
+    ano=matriz[0][columnas].fecha.anyo;
+  	strcpy(mes, matriz[0][columnas].fecha.mes);
+    
+    for(i = 0; i < filas; i++)
+    {
+    	suma += matriz[i][columnas].magnitud;
+	}
+	
+	media = suma / filas;
+	
+	for(i = 0; i < filas; i++)
+    {
+    	varianza_numerador += pow(matriz[i][columnas].magnitud - media, 2);
+	}
+	
+	varianza = varianza_numerador / filas;
+	
+	desviaciontipica = sqrt(varianza);
+	
+	printf("\nLa desviacion tipica en %s-%i es %f\n\n", mes, ano, desviaciontipica);
+	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip, "La desviacion tipica en en %s-%i es %f\n\n", mes, ano, desviaciontipica);
+    
+	fclose(ptranscrip);	
+	
+	return desviaciontipica;
+}
 
 // 2.9 ORDENAR DE MÁXIMO A MÍNIMO POR COLUMNAS
 void ordenar_max_min_columnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
@@ -533,4 +602,50 @@ void ordenar_max_min_columnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], i
     
 	fclose(ptranscrip);
 	
+}
+
+// 2.9 ORDENAR DE MENOR A MAYOR POR COLUMNAS
+void ordenar_min_max_columnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
+{
+	int i,j,k=17;
+	float v[17], mayor;
+	char cadenaaux[10];
+	generacion_2122 tipos[50];
+	
+	for (i=0; i < k; i++)
+	{
+		v[i]=matriz[i][columnas].magnitud;
+	}
+	
+	for (i=0; i < k; i++)
+	{
+		strcpy(tipos[i].tipo, matriz[i][0].tipo);
+	}
+
+	for(j =0; j < k-1; j++)
+	{
+		for (i=0; i < k-1; i++)
+		{
+			if (v[i]> v[i+1])
+			{
+				mayor = v[i];
+				v[i] =v[i+1];
+				v[i+1]=mayor;
+				strcpy(cadenaaux, tipos[i].tipo);
+				strcpy(tipos[i].tipo, tipos[i+1].tipo);
+				strcpy(tipos[i+1].tipo, cadenaaux);
+			}
+		}
+	}
+	for (i=0; i< k; i++)
+		printf ("%d) %f en %s\n", i+1, v[i], tipos[i].tipo);
+	printf("\n\n");
+	
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    for (i=0; i< k; i++)
+		fprintf(ptranscrip, "%d) %f en %s\n", i+1, v[i], tipos[i].tipo);
+    
+	fclose(ptranscrip);
+
 }

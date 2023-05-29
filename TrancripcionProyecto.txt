@@ -1,0 +1,18 @@
+Esta es la transcripción del programa:
+1) 0,501755 en Hidroeólica
+2) 28,766272 en Turbina de gas
+3) 59,850281 en Residuos renovables
+4) 102,634026 en Solar térmica
+5) 116,282051 en Turbina de vapor
+6) 182,932083 en Residuos no renovables
+7) 203,759979 en Motores diésel
+8) 320,531403 en Turbinación bombeo
+9) 390,590393 en Otras renovables
+10) 557,975952 en Carbón
+11) 848,403076 en Solar fotovoltaica
+12) 2405,236816 en Cogeneración
+13) 2729,183105 en Ciclo combinado
+14) 4057,346680 en Hidráulica
+15) 5199,740723 en Nuclear
+16) 7101,249023 en Eólica
+17) 1094709925990181000000000000,000000 en Fuel + Gas

@@ -505,13 +505,20 @@ void operacionescolumnas(generacion_2122 generacion[][NUM_COLUMNAS], int fecha, 
 			medianacolumnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 7:
+			filas=17;
+			varianzacolumnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 8:
+			filas=17;
+			destipicacolumnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 9:
+			filas=17;
 			ordenar_max_min_columnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 10:
+			filas=17;
+			ordenar_min_max_columnas(generacion, filas, fecha, ptranscrip);
 			break;
 		case 11:
 			system("cls");
