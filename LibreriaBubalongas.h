@@ -677,7 +677,7 @@ void ordenar_max_min_columnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], i
 	
 	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
 	
-	fprintf(ptranscrip, "La ordenación de menor a mayor en %s-%i es: \n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo);
+	fprintf(ptranscrip, "La ordenación de mayor a menor en %s-%i es: \n", matriz[0][columnas].fecha.mes, matriz[0][columnas].fecha.anyo);
   
     for (i=0; i< k; i++)
 		fprintf(ptranscrip, "%d) %f en %s\n", i+1, v[i], tipos[i].tipo);

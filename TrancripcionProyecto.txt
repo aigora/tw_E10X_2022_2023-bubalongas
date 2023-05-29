@@ -1,13 +1,4 @@
 Esta es la transcripción del programa:
-
 No hay moda.
 
-
-La moda es 0,000000 y se repite 23 veces.
-
-
-No hay moda.
-
-
-No hay moda.
-
+Fin del programa.
