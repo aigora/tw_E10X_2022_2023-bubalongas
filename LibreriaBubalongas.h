@@ -43,34 +43,53 @@ float mediatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas,
 
 // 1.2 MODA POR FILA
 float modatipo(generacion_2122 matriz[][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
-{ 
+{  
   int i, j;
-  float moda = 0;
-  
-  for (i = 1; i < columnas; i++) 
+  int frecuencia[24] = {0};  // Inicializar arreglo de frecuencia con ceros
+  float moda;
+  int seRepite = 0;
+
+  for (i = 0; i < columnas; i++)
   {
-  	for (j = i + 1; j < columnas; j++) 
+  	frecuencia[i] = 1;
+  	
+  	for (j = i + 1; j < columnas; j++)
   	{
-  		if (matriz[filas][i].magnitud == matriz[filas][j].magnitud)
+  		if (matriz[filas][i].magnitud == matriz[filas][j].magnitud)	
   		{
-  			printf("La moda es %f", matriz[filas][i].magnitud);
-			
-			moda = 1;	
+  			frecuencia[i]++;
+  			seRepite = 1;
 		}
 	}
   }
-  
-  if (!moda)
-	{
-        printf("\nNo hay moda.\n\n");
-    }
-  
-  ptranscrip = fopen("TrancripcionProyecto.txt", "a");
-  
-  fprintf(ptranscrip, "No hay moda.\n");
-    
-  fclose(ptranscrip);
 
+  if (!seRepite)
+  {
+    printf("\nNo hay moda.\n\n");
+    
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip,"\nNo hay moda.\n\n");
+    
+	fclose(ptranscrip);
+  }
+
+  for (i = 0; i < columnas; i++)
+  {
+  	if (frecuencia[i] > 1)
+  	{
+		printf("\nLa moda es %f y se repite %d veces.\n\n", matriz[filas][i].magnitud, frecuencia[i]);
+		
+		ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+  		fprintf(ptranscrip, "\nLa moda es %f y se repite %d veces.\n\n", matriz[filas][i].magnitud, frecuencia[i]);
+    
+  		fclose(ptranscrip);
+  		
+		break;
+	}
+  }
+  
   return moda;
 }
 
@@ -380,34 +399,53 @@ float mediacolumna(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, i
 
 // 2.2 MODA POR COLUMNAS
 float modacolumnas(generacion_2122 matriz[NUM_FILAS][NUM_COLUMNAS], int filas, int columnas, FILE *ptranscrip)
-{ 
+{  
   int i, j;
-  float moda = 0;
-  
-  for (i = 1; i < filas; i++) 
+  int frecuencia[24] = {0};  // Inicializar arreglo de frecuencia con ceros
+  float moda;
+  int seRepite = 0;
+
+  for (i = 0; i < filas; i++)
   {
-  	for (j = i + 1; j < filas; j++) 
+  	frecuencia[i] = 1;
+  	
+  	for (j = i + 1; j < filas; j++)
   	{
-  		if (matriz[i][columnas].magnitud == matriz[j][columnas].magnitud)
+  		if (matriz[i][columnas].magnitud == matriz[j][columnas].magnitud)	
   		{
-  			printf("La moda es %f", matriz[i][columnas].magnitud);
-			
-			moda = 1;	
+  			frecuencia[i]++;
+  			seRepite = 1;
 		}
 	}
   }
-  
-  if (!moda)
-	{
-        printf("\nNo hay moda.\n\n");
-    }
-  
-  ptranscrip = fopen("TrancripcionProyecto.txt", "a");
-  
-  fprintf(ptranscrip, "No hay moda.\n");
-    
-  fclose(ptranscrip);
 
+  if (!seRepite)
+  {
+    printf("\nNo hay moda.\n\n");
+    
+	ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+    fprintf(ptranscrip,"\nNo hay moda.\n\n");
+    
+	fclose(ptranscrip);
+  }
+
+  for (i = 0; i < filas; i++)
+  {
+  	if (frecuencia[i] > 1)
+  	{
+		printf("\nLa moda es %f y se repite %d veces.\n\n", matriz[i][columnas].magnitud, frecuencia[i]);
+		
+		ptranscrip = fopen("TrancripcionProyecto.txt", "a");
+  
+  		fprintf(ptranscrip, "\nLa moda es %f y se repite %d veces.\n\n", matriz[i][columnas].magnitud, frecuencia[i]);
+    
+  		fclose(ptranscrip);
+  		
+		break;
+	}
+  }
+  
   return moda;
 }
 
